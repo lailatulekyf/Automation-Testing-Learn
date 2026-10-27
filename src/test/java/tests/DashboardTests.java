@@ -24,6 +24,7 @@ public class DashboardTests extends BaseTest {
         Assert.assertTrue(dashboardPage.isAppLogoDisplayed(), "Logo 'Swag Labs' seharusnya muncul!");
         Assert.assertTrue(dashboardPage.isProductsTitleDisplayed(), "Judul 'Products' seharusnya muncul!");
         Assert.assertTrue(dashboardPage.isCartIconDisplayed(), "Ikon keranjang seharusnya muncul!");
+        Assert.assertTrue(dashboardPage.isBurgerIconDisplayed(), "Ikon bruger seharusnya muncul!");
 
         Log.info("Test Berhasil: Semua elemen dashboard sukses divalidasi!");
     }

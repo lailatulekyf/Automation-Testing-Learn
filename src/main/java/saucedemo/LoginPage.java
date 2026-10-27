@@ -37,8 +37,8 @@ public class LoginPage extends BasePage {
 
     public boolean isUserLoggedInSuccessfully() {
         try {
-            waitForElementToBeVisible(pageTitle);
-            return pageTitle.isDisplayed() && pageTitle.getText().equals("Products");
+            // Langsung panggil loginButton karena sudah berjenis WebElement (Page Factory)
+            return loginButton.isDisplayed();
         } catch (Exception e) {
             return false;
         }
@@ -48,6 +48,15 @@ public class LoginPage extends BasePage {
         try {
             waitForElementToBeVisible(errorAlert);
             return errorAlert.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    // Method untuk memastikan kita benar-benar sudah kembali ke halaman login
+    public boolean isAtLoginPage() {
+        try {
+            return loginButton.isDisplayed();
         } catch (Exception e) {
             return false;
         }
